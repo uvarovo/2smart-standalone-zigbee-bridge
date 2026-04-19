@@ -5,7 +5,8 @@ ENV PYTHON=/usr/bin/python3
 ENV npm_config_build_from_source=true
 
 RUN apk update \
-    && apk add bash git make gcc g++ python3 linux-headers udev
+    && apk add bash git make gcc g++ python3 linux-headers udev \
+    && npm install -g node-gyp@9
 
 COPY etc/node_mapping.json etc/node_mapping.json
 COPY etc/zigbee2mqtt_configuration.yaml etc/zigbee2mqtt_configuration.yaml
